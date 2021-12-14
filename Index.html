@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="theme-color" content="#bcd6f8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rock Paper Scissor Game</title>
+
+    <!-- CDN -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="hero">
+      <div class="heading">
+        <h2>WELCOME TO</h2>
+        <h1>RPS RING</h1>
+      </div>
+      <div class="playerNplay">
+        <button onclick="start();">Play</button>
+      </div>
+    </div>
+    <div class="gameCanvas">
+      <div class="dashBoard">
+        <div class="players side">
+          <p id="PlayerName">YOU</p>
+          <span id="playerScore">0</span>
+        </div>
+        <span id="vs">VS</span>
+        <div class="bot side">
+          <span id="computerScore">0</span>
+          <p>BOT</p>
+        </div>
+      </div>
+      <div class="ring">
+        <div class="player">
+          <img src="Image/rock.png" id="playerHand" alt="Player Hand" />
+        </div>
+        <div class="computer">
+          <img src="Image/rock.png" id="computerHand" alt="Computer Hand" />
+        </div>
+        <div class="resultScreen">TEMP</div>
+      </div>
+      <div class="optionBtn">
+        <button onclick="playerAction(0);">
+          <img src="Image/rock.png" alt="" />
+        </button>
+        <button onclick="playerAction(1);">
+          <img src="Image/paper.png" alt="" />
+        </button>
+        <button onclick="playerAction(2);">
+          <img src="Image/scissor.png" alt="" />
+        </button>
+      </div>
+    </div>
+    <div class="refreshScreen">
+      <div class="resultState">Result state will be here</div>
+      <div class="PlayAgain">Play Again</div>
+      <button onclick="refresh();">
+        <svg
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M14.89 5.0799C14.02 4.8199 13.06 4.6499 12 4.6499C7.20996 4.6499 3.32996 8.5299 3.32996 13.3199C3.32996 18.1199 7.20996 21.9999 12 21.9999C16.79 21.9999 20.67 18.1199 20.67 13.3299C20.67 11.5499 20.13 9.8899 19.21 8.5099"
+            stroke="white"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <path
+            d="M16.13 5.32L13.24 2"
+            stroke="white"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <path
+            d="M16.13 5.32007L12.76 7.78007"
+            stroke="white"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+      </button>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

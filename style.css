@@ -1,0 +1,303 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+/* Poppins */
+@import url("https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap");
+/* MedievalSharp */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* border: 0.1px dotted #00000080;  */
+}
+
+body {
+  height: 100vh;
+  width: 100vw;
+  color: #000b24;
+  background: #bcd6f8;
+  font-family: "MedievalSharp" ,"Poppins", sans-serif;
+  overflow: hidden;
+}
+
+/* hero Section */
+.hero {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  background: #bcd6f8;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  border-bottom: 10px solid #000b24 ;
+  top: 0%;
+  z-index: 99;
+  transition: 1s all cubic-bezier(0.36, 0.07, 0.19, 0.97);
+}
+
+.hero.start{
+  top: -100%;
+}
+
+.hero h2 {
+  font-size: 2.75em;
+  font-weight: 300;
+  /* letter-spacing: 0.05em; */
+  line-height: 1em;
+}
+.hero h1 {
+  font-size: 4em;
+  font-weight: 800;
+  line-height: 0.75em;
+}
+.hero .playerNplay {
+  margin-top: 60px;
+}
+.hero input,
+.hero button {
+  display: block;
+  width: 100%;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #000b24;
+  background: #9cc6f8;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  border: 1px solid #6590c4;
+  border-radius: 0.25rem;
+  border: 2px solid #fff;
+  transition: all 0.15s ease-in-out;
+  box-shadow: 0px 10px 10px rgba(1, 32, 69, 0.4);
+}
+
+.hero input::placeholder {
+  color: #000b24;
+}
+
+.hero button {
+  font-size: 2em;
+  font-weight: 700;
+  font-family:"Poppins", sans-serif;
+}
+
+.gameCanvas {
+  position: fixed;
+  top: 0%;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  background: #bcd6f8;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.dashBoard {
+  /* margin-bottom: 10px; */
+  display: flex;
+  width: 60vh;
+  justify-content: space-between;
+  font-size: 28px;
+  font-family: "MedievalSharp", cursive;
+  transform: translateY(100%);
+  z-index: 10;
+}
+.dashBoard #vs{
+  margin-top: 10px;
+  font-size: 40px;
+} 
+.dashBoard .side {
+  display: flex;
+  width: 110px;
+  padding: 13px 10px 0px 10px ;
+  justify-content: space-between;
+  background: #fff;
+  border-radius: 0px 0px 5px 5px;
+  border: 5px solid #fff;
+  border-top: 0px;
+}
+
+.gameCanvas .ring {
+  height: 60vh;
+  width: 70vh;
+  border-radius: 40px;
+  border: 5px solid #fff;
+  position: relative;
+  transition: 0.4s border;
+  overflow: hidden;
+}
+
+.ring div {
+  height: fit-content;
+  width: fit-content;
+}
+
+.computer {
+  position: absolute;
+  top: 35%;
+  right: 5%;
+  transform: rotate(30deg);
+}
+
+.player {
+  position: absolute;
+  top: 35%;
+  left: 5%;
+  transform: scaleX(-1) rotate(30deg);
+}
+
+.ring img {
+  height: 120px;
+  width: auto;
+  animation-duration: 1.5s;
+  animation-timing-function: cubic-bezier(0.36, 0.07, 0.19, 0.97);
+}
+
+.optionBtn {
+  height: 100px;
+  width: 30vw;
+  margin-top: 30px;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.optionBtn button {
+  height: 70px;
+  width: 70px;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  background: #5c97dd;
+  cursor: pointer;
+  box-shadow: 0px 5px 10px rgba(1, 32, 69, 0.4);
+  border: 1px solid #fff;
+  -webkit-tap-highlight-color: transparent; 
+}
+.optionBtn button:hover,.hero button:hover {
+  opacity: 0.85;
+  box-shadow: 0px 5px 10px rgba(1, 32, 69, 0.3);
+}
+.optionBtn button:focus, .hero button:focus{
+  opacity: 1;
+  box-shadow: 0px 1px 5px rgba(1, 32, 00 69, 0.25);
+}
+.optionBtn button img {
+  height: 40px;
+  width: 40px;
+  padding-top: 5px;
+  transform: scaleX(-1) rotate(30deg);
+}
+
+.resultScreen{
+  height: 100% !important;
+  width: 100% !important;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 40px;
+  background: #fff;
+  opacity: 0;
+  visibility: none;
+  transition: 0.5s all;
+}
+.resultScreen.win, .resultScreen.lost{
+  color: white;
+  opacity: 1;
+  visibility: visible;
+}
+.resultScreen.win{
+  background-color: #4DF84A;
+}
+.resultScreen.lost{
+  background-color: #F84A4A;
+}
+
+.refreshScreen{
+  position: absolute;
+  bottom: 0%;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  z-index: 999;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  opacity: 0;
+  visibility: hidden;
+  transition: 1s all ease-in-out;
+  background-color: hsla(214, 81%, 85%, 0.75);
+}
+.refreshScreen.visiable{
+  visibility: visible;
+  opacity: 1;
+}
+.refreshScreen .resultState{
+  font-size: 48px;
+}
+.refreshScreen .PlayAgain{
+  font-size: 28px;
+  margin-top: 30px;
+}
+.refreshScreen button{
+  height: 120px;
+  width: 120px;
+  border-radius: 50%;
+  margin-top: 10px;
+  border: 1px solid #fff;
+  background-color: #5c97dd;
+  
+}
+.refreshScreen button svg{
+  height: 75%;
+  width: 75%;
+  /* fill: ; */
+  transform: translate(-1px, -2px);
+}
+
+@media (max-width: 768px) {
+  .gameCanvas .ring{
+    width: 95vw;
+  }
+  .dashBoard{
+    width: 95vw;
+  }
+  .dashBoard .side:nth-child(1){
+    border-radius: 20px 0px 5px 5px;
+    border-left: 0px;
+  }
+  .dashBoard .side:nth-child(3){
+    border-radius: 0px 20px 5px 5px;
+    border-right: 0px;
+  }
+  .optionBtn{
+    width: 75vw;
+  }
+  .resultScreen{
+    padding-top: 250px;
+  }
+}
+/* Hand Shake Animaiton */
+
+@keyframes shake {
+  10%,
+  90% {
+    transform: rotate(2deg) translateY(19px) translateX(-19px);
+  }
+
+  20%,
+  80% {
+    transform: rotate(4deg) translateY(-16px) translateX(-16px);
+  }
+
+  30%,
+  50%,
+  70% {
+    transform: rotate(-4deg) translateY(18px) translateX(-18px);
+  }
+
+  40%,
+  60% {
+    transform: rotate(4deg) translateY(-16px) translateX(-16px);
+  }
+}
