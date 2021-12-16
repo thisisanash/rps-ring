@@ -32,6 +32,7 @@ body {
   border-bottom: 10px solid #000b24 ;
   top: 0%;
   z-index: 99;
+  text-align: center;
   transition: 1s all cubic-bezier(0.36, 0.07, 0.19, 0.97);
 }
 
@@ -228,7 +229,7 @@ body {
   transition: 1s all ease-in-out;
   background-color: hsla(214, 81%, 85%, 0.75);
 }
-.refreshScreen.visiable{
+.refreshScreen.visible{
   visibility: visible;
   opacity: 1;
 }

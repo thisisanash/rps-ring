@@ -5,10 +5,12 @@
     <meta name="theme-color" content="#bcd6f8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" href="Image/rock.png" type="image/x-icon">
+    <!-- Favicon  -->
+    <link rel="icon" href="Images/rock.png" type="image/x-icon">
+
     <title>Rock Paper Scissor Game</title>
 
-    <!-- CDN -->
+    <!-- Internal Style Sheet -->
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
@@ -35,22 +37,22 @@
       </div>
       <div class="ring">
         <div class="player">
-          <img src="Image/rock.png" id="playerHand" alt="Player Hand" />
+          <img src="Images/rock.png" id="playerHand" alt="Player Hand" />
         </div>
         <div class="computer">
-          <img src="Image/rock.png" id="computerHand" alt="Computer Hand" />
+          <img src="Images/rock.png" id="computerHand" alt="Computer Hand" />
         </div>
         <div class="resultScreen">TEMP</div>
       </div>
       <div class="optionBtn">
-        <button onclick="playerAction(0);">
-          <img src="Image/rock.png" alt="" />
+        <button id="rock">
+          <img src="Images/rock.png" alt="" />
         </button>
-        <button onclick="playerAction(1);">
-          <img src="Image/paper.png" alt="" />
+        <button id="paper">
+          <img src="Images/paper.png" alt="" />
         </button>
-        <button onclick="playerAction(2);">
-          <img src="Image/scissor.png" alt="" />
+        <button id="scissor">
+          <img src="Images/scissor.png" alt="" />
         </button>
       </div>
     </div>
